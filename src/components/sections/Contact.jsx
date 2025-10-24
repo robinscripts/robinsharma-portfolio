@@ -17,7 +17,7 @@ function Contact() {
     <section id="contact" className="mt-24 bg-gray-100 py-16">
       {/* Section Header */}
       <div className="max-w-4xl mx-auto px-4 text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-fblack)]">
+        <h2 className="text-3xl md:text-4xl font-bold text-(--color-fblack)">
           Thanks for taking the time to reach out. How can I help you today?
         </h2>
       </div>
@@ -34,7 +34,7 @@ function Contact() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
               />
               <input
                 type="email"
@@ -42,7 +42,7 @@ function Contact() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
               />
             </div>
 
@@ -53,13 +53,13 @@ function Contact() {
               onChange={(e) => setMessage(e.target.value)}
               rows={5}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
             ></textarea>
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-[var(--color-primary)] text-white py-3 rounded-lg font-medium hover:bg-[var(--color-secondary)] transition-colors"
+              className="w-full bg-(--color-primary) text-white py-3 rounded-lg font-medium hover:bg-(--color-secondary) transition-colors"
             >
               Submit
             </button>

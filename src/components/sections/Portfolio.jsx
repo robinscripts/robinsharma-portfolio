@@ -28,7 +28,7 @@ function Portfolio() {
     <section id="portfolio" className="py-20">
       {/* Section Header */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-[var(--color-fblack)]">
+        <h2 className="text-4xl font-bold text-(--color-fblack)">
           My Recent Works
         </h2>
       </div>
@@ -42,7 +42,7 @@ function Portfolio() {
           >
             <IFrame link={project.link} />
             <div className="p-5 text-center">
-              <h3 className="text-xl font-semibold text-[var(--color-fblack)] mb-2">
+              <h3 className="text-xl font-semibold text-(--color-fblack) mb-2">
                 {project.title}
               </h3>
             </div>
@@ -51,7 +51,7 @@ function Portfolio() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--color-primary)] hover:text-[var(--color-secondary)] font-medium"
+                className="text-(--color-primary) hover:text-(--color-secondary) font-medium"
               >
                 Live Demo
               </a>
@@ -59,7 +59,7 @@ function Portfolio() {
                 href={project.srcCode || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--color-primary)] hover:text-[var(--color-secondary)] font-medium"
+                className="text-(--color-primary) hover:text-(--color-secondary) font-medium"
               >
                 Source Code
               </a>

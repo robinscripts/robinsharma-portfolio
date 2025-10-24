@@ -19,8 +19,8 @@ const socialLinks = [
 
 function Footer() {
   return (
-    <footer id="footer" className="bg-[var(--color-primary)] text-white py-10">
-      <div className="max-w-[90rem] mx-auto flex flex-col items-center px-6 text-center space-y-4">
+    <footer id="footer" className="bg-(--color-primary) text-white py-10">
+      <div className="max-w-360 mx-auto flex flex-col items-center px-6 text-center space-y-4">
         {/* Logo */}
         <img
           src={logo}
@@ -41,7 +41,7 @@ function Footer() {
               href={link.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-[var(--color-secondary)] transition-colors"
+              className="text-white hover:text-(--color-secondary) transition-colors"
             >
               {link.icon}
             </a>
