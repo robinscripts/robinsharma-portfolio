@@ -4,13 +4,38 @@ function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState({ type: "", message: "" });
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Form submitted:", { name, email, message });
-    setName("");
-    setEmail("");
-    setMessage("");
+    setStatus({ type: "loading", message: "Sending your message..." });
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "48929b41-3724-4329-a0e0-4a8c93b54a96",
+          name: name,
+          email: email,
+          message: message
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus({ type: "success", message: "✅ Message sent successfully!" });
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        setStatus({ type: "error", message: "❌ Failed to send message. Please try again." });
+      }
+    } catch (error) {
+      setStatus({ type: "error", message: "⚠️ An unexpected error occurred." });
+      console.log(error);
+    }
+    setTimeout(() => setStatus({ type: "", message: "" }), 5000);
   };
 
   return (
@@ -21,11 +46,12 @@ function Contact() {
           Thanks for taking the time to reach out.<br/> How can I help you today?
         </h2>
       </div>
-
+      
       {/* Form */}
       <div className="max-w-2xl mx-auto px-4">
         <div className="bg-white shadow-md rounded-xl p-8">
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="48929b41-3724-4329-a0e0-4a8c93b54a96"/>
             {/* Name & Email */}
             <div className="flex flex-col md:flex-row gap-4">
               <input
@@ -55,6 +81,20 @@ function Contact() {
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
             ></textarea>
+
+            {status.message && (
+              <div
+                className={`text-center mt-2 text-sm font-medium transition-all duration-300 ${
+                  status.type === "success"
+                    ? "text-green-400"
+                    : status.type === "error"
+                    ? "text-red-400"
+                    : "text-gray-300"
+                }`}
+              >
+                {status.message}
+              </div>
+            )}
 
             {/* Submit Button */}
             <button

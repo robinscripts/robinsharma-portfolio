@@ -22,12 +22,18 @@ function Hero() {
           </p>
           {/* Buttons */}
           <div className="flex justify-start gap-4 pt-4">
-            <button className="px-6 py-2 bg-(--color-primary) text-white rounded-md font-medium hover:bg-(--color-secondary) transition-all duration-300">
+            <a 
+              href="https://wa.me/918556852011?text=Hi!%20I'm%20interested%20in%20working%20with%20you."
+              target="__blank"
+              className="px-6 py-2 bg-(--color-primary) text-white rounded-md font-medium hover:bg-(--color-secondary) transition-all duration-300">
               Hire Me
-            </button>
-            <button className="px-6 py-2 border-2 border-(--color-primary) text-(--color-primary) rounded-md font-medium hover:bg-(--color-primary) hover:text-white transition-all duration-300">
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1uTFfU2nCrlpMwmLnRnpFNX8So-ub7BhD/view?usp=drive_link" 
+              target="__blank"
+              className="px-6 py-2 border-2 border-(--color-primary) text-(--color-primary) rounded-md font-medium hover:bg-(--color-primary) hover:text-white transition-all duration-300">
               Get CV
-            </button>
+            </a>
           </div>
         </div>
         {/* Right Column */}
