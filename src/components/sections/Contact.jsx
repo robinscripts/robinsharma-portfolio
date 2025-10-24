@@ -18,7 +18,7 @@ function Contact() {
       {/* Section Header */}
       <div className="max-w-4xl mx-auto px-4 text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-(--color-fblack)">
-          Thanks for taking the time to reach out. How can I help you today?
+          Thanks for taking the time to reach out.<br/> How can I help you today?
         </h2>
       </div>
 
