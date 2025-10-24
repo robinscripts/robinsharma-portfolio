@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+*{
+    /* margin: 0; */
+    /* padding: 0; */
+    box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #6E07F3;
+  --color-secondary: #5BE9B9;
+  --color-transparent: rgba(255, 255, 255, 0.12);
+  --color-fblack: #28282B;
+}
