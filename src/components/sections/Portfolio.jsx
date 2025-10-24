@@ -56,16 +56,15 @@ function Portfolio() {
               alt={project.title}
               className="w-full h-64 md:h-72 lg:h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
             />
-
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center gap-3 transition-opacity duration-300">
+            <div className="absolute inset-0 bg-(--color-primary) bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center gap-3 transition-opacity duration-300">
               <h3 className="text-white text-xl font-bold">{project.title}</h3>
               <div className="flex gap-4">
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-white rounded-md font-medium transition-all duration-300"
+                  className="px-4 py-2 bg-white hover:text-(--color-secondary) text-(--color-primary) rounded-md font-medium transition-all duration-300"
                 >
                   Live Demo
                 </a>
