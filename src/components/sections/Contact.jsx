@@ -35,7 +35,7 @@ function Contact() {
       setStatus({ type: "error", message: "⚠️ An unexpected error occurred." });
       console.log(error);
     }
-    setTimeout(() => setStatus({ type: "", message: "" }), 5000);
+    setTimeout(() => setStatus({ type: "", message: "" }), 10000);
   };
 
   return (
@@ -50,8 +50,7 @@ function Contact() {
       {/* Form */}
       <div className="max-w-2xl mx-auto px-4">
         <div className="bg-white shadow-md rounded-xl p-8">
-          <form onSubmit={handleSubmit} className="space-y-4" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="48929b41-3724-4329-a0e0-4a8c93b54a96"/>
+          <form onSubmit={handleSubmit} className="space-y-4">
             {/* Name & Email */}
             <div className="flex flex-col md:flex-row gap-4">
               <input
@@ -99,9 +98,11 @@ function Contact() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-(--color-primary) text-white py-3 rounded-lg font-medium hover:bg-(--color-secondary) transition-colors"
+              disabled={status.type === "loading"}
+              className={`w-full bg-(--color-primary) text-white py-3 rounded-lg font-medium hover:bg-(--color-secondary) transition-colors 
+                          ${status.type === "loading" ? "opacity-70 cursor-not-allowed" : "hover:bg-secondary" }`}
             >
-              Submit
+              {status.type === "loading" ? "Sending..." : "Submit"}
             </button>
           </form>
         </div>
