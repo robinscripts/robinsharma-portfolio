@@ -23,7 +23,7 @@ function Hero() {
           {/* Buttons */}
           <div className="flex justify-start gap-4 pt-4">
             <a 
-              href="https://wa.me/918556852011?text=Hi!%20I'm%20interested%20in%20working%20with%20you."
+              href="https://wa.me/918556852011?text=Hello,%20I’d%20like%20to%20explore%20a%20professional%20collaboration%20with%20you%20and%20discuss%20project%20in%20detail."
               target="__blank"
               className="px-6 py-2 bg-(--color-primary) text-white rounded-md font-medium hover:bg-(--color-secondary) transition-all duration-300">
               Hire Me
